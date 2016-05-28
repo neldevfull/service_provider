@@ -6,8 +6,4 @@ module.exports = function(app) {
             }
         });
     });
-
-    app.post('/api/authentication', function(req, res) {
-        console.log(req.body);
-    })
 }

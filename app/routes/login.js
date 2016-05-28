@@ -6,4 +6,21 @@ module.exports = function(app) {
             }
         });
     });
+
+    app.post('/api/authentication', function(req, res) {
+        var auth = req.body;
+
+        if(auth.email !== "" && auth.password !== "")
+            res.render('index', {
+                page: 'home'
+            });
+        else {
+            res.format({
+                html: function() {
+                    res.render('login');
+                }
+            });
+        }
+
+    });
 }
