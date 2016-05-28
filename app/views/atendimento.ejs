@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <title>Prestação de Serviço</title>
+</head>
+<body>
+    <header>
+        <div style="float: left; padding-left: 1em;">Prestação de Serviço</div>
+        <div style="float: right; padding-right: 1em;">Sair</div>
+    </header>
+    <nav class="" style="background-color: #2b2b2b; clear: both; height: 110px;">
+        <ul class="menu-navbar">
+            <li><a href="#">Perfil</a></li>
+            <li>|</li>
+            <li><a href="#">Atendimentos</a></li>
+            <li>|</li>
+            <li><a href="#">Atividades</a></li>
+        </ul>
+        <u class="menu-navbar">
+            <li><a href="#">Clientes</a></li>
+            <li>|</li>
+            <li><a href="#">Configurações</a></li>
+        </u>
+    </nav>
+    <main class="container-fluid">
+        <h2>Cadastrar</h2>
+        <form class="container-fluid">
+            <div class="form-group">
+                <div class="row" style="margin-top: 1em;">
+                    <input type="text" class="form-control"
+                        placeholder="Data de atendimento"
+                        style="margin-bottom: 1em;">
+                    <input type="text" class="form-control"
+                        placeholder="Hora inicial"
+                        style="margin: 1em 0;">
+                    <input type="text" class="form-control"
+                        placeholder="Hora final"
+                        style="margin: 1em 0;">
+                    <input type="text" class="form-control"
+                        placeholder="Quilometragem"
+                        style="margin: 1em 0;">
+                    <select class="form-control" style="margin: 1em 0;">
+                        <option>Cliente</option>
+                    </select>
+                    <select class="form-control" style="margin: 1em 0;">
+                        <option>Atividade</option>
+                    </select>
+                    <select class="form-control" style="margin: 1em 0;">
+                        <option>Despesas</option>
+                    </select>
+                    <button style="width: 100%; margin-top: 1em;
+                        font-size: 1.2em;"
+                        class="btn btn-success">Cadastrar</button>
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

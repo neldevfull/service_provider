@@ -1,10 +1,12 @@
 var express    = require('express');
+var load       = require("express-load");
 var bodyParser = require('body-parser');
 
 module.exports = function() {
     var app = express();
 
     // Config views
+    app.use(express.static('./public'));
     app.set('view engine', 'ejs');
     app.set('views', './app/views');
 
@@ -12,21 +14,9 @@ module.exports = function() {
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
 
-    app.get('/api/login', function(request, response) {
-        response.format({
-            html: function() {
-                response.render('login', {name: 'John'});
-            }
-        });
-    });
-
-    app.get('/api/menu/prestador/:id', function(req, res) {
-        res.format({
-            html: function() {
-                res.render('login', {name: 'Daniel'});
-            }
-        });
-    });
+    // Auto load
+    load('routes', {cwd: 'app'})
+        .into(app);
 
     return app;
 }

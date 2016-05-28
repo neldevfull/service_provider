@@ -1,9 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Service Provider</title>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <title>Prestação de Serviço</title>
 </head>
 <body>
-    <h1>Ola <%= name%></h1>
+    <header>
+        <div style="float: left; padding-left: 1em;">Prestação de Serviço</div>
+        <div style="float: right; padding-right: 1em;">Cadastrar</div>
+    </header>
+    <main class="container-fluid">
+        <form method="POST" action="/api/authentication">
+            <div class="form-group form-register">
+                <h2>Login</h2>
+                <input type="email" class="form-control" name="email">
+                <input type="password" class="form-control" name="password">
+                <div class="input-group">
+                    <input type="submit" value="Entrar" class="btn btn-success"
+                        style="width: 100%; float:left;">
+                    <a href="#" style="font-size: 1.2em;">Esqueceu a senha</a>
+                </div>
+            </div>
+        </form>
+    </main>
 </body>
 </html>
