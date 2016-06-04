@@ -2,18 +2,20 @@ module.exports = function(app) {
     app.get('/api/login', function(request, response) {
         response.format({
             html: function() {
-                response.render('login', {name: 'John'});
+                response.render('login');
             }
         });
     });
 
     app.post('/api/authentication', function(req, res) {
-        var auth = req.body;
+        var user = req.body;
 
-        if(auth.email !== "" && auth.password !== "")
+        if(user.email === 'john' && user.password === '123') {
             res.render('index', {
-                page: 'home'
+                page: 'home',
+                username: user.email
             });
+        }
         else {
             res.format({
                 html: function() {
@@ -21,6 +23,5 @@ module.exports = function(app) {
                 }
             });
         }
-
     });
 }
