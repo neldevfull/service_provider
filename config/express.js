@@ -1,6 +1,6 @@
 var express    = require('express');
-var load       = require("express-load");
 var bodyParser = require('body-parser');
+var load       = require('express-load');
 
 module.exports = function() {
     var app = express();
@@ -14,9 +14,17 @@ module.exports = function() {
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
 
-    // Auto load
-    load('routes', {cwd: 'app'})
-        .into(app);
+    // Load
+    load('routers', {cwd: 'app'})
+      .into(app);
+
+    app.get('/api/menu/prestador/:id', function(req, res) {
+        res.format({
+            html: function() {
+                res.render('login');
+            }
+        });
+    });
 
     return app;
 }
