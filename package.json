@@ -13,6 +13,7 @@
     "bootstrap": "^3.3.6",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
-    "express-load": "^1.1.15"
+    "express-load": "^1.1.15",
+    "mongoose": "^4.5.1"
   }
 }
