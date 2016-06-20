@@ -1,6 +1,7 @@
 var express    = require('express');
 var bodyParser = require('body-parser');
 var load       = require('express-load');
+var mongoose   = require('mongoose');
 
 module.exports = function() {
     var app = express();
@@ -13,6 +14,9 @@ module.exports = function() {
     // Middlewares
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
+
+    // Database
+    global.db = mongoose.connect('mongodb://dfpires:dfpires@ds015730.mlab.com:15730/addressbook');
 
     // Load
     load('routers', {cwd: 'app'})
